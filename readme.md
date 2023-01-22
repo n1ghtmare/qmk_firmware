@@ -34,3 +34,25 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 ## Official Website
 
 [qmk.fm](https://qmk.fm) is the official website of QMK, where you can find links to this page, the documentation, and the keyboards supported by QMK.
+
+## Installation
+
+To install (on Arch), run:
+
+```
+sudo pacman -S qmk
+```
+
+Then clone this repo (this guide assuesm `~/Dev-Config/`), and run:
+
+```
+qmk setup -H ~/Dev-Config/qmk_firmware
+```
+
+## Flashing the Sofle
+
+In order to flash the sofle, disconnect the keyboard from the computer, then detach TRRS cable between the halves. Then connect one half first, and run:
+
+```
+qmk flash -kb sofle/rev1 -km n1ghtmare
+```
