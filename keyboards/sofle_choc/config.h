@@ -28,6 +28,7 @@
 #define MATRIX_COL_PINS { F6, F7, B1, B3, B2, B6 }
 #define DIODE_DIRECTION COL2ROW
 
+#define TAPPING_TERM 100
 #define DEBOUNCE 5
 
 // Encoder support
@@ -35,13 +36,16 @@
 #define ENCODERS_PAD_B { F4 }
 #define ENCODERS_PAD_A_RIGHT { F4 }
 #define ENCODERS_PAD_B_RIGHT { F5 }
+#define ENCODER_RESOLUTION 2
+
+#define TAP_CODE_DELAY 10
 
 // Communication between sides
 #define SOFT_SERIAL_PIN D2
 
 #ifdef RGB_MATRIX_ENABLE
-#define RGB_DI_PIN D3
-#define RGBLED_NUM 29
-#define RGB_MATRIX_LED_COUNT 58
-#define RGB_MATRIX_SPLIT { 29, 29 }
+    #define RGB_DI_PIN D3
+    #define RGBLED_NUM 29
+    #define RGB_MATRIX_LED_COUNT 58
+    #define RGB_MATRIX_SPLIT { 29, 29 }
 #endif
