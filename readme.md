@@ -39,22 +39,22 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 
 To install (on Arch), run:
 
-```
-sudo pacman -S qmk
+```zsh
+$ sudo pacman -S qmk
 ```
 
 Then clone this repo (this guide assuesm `~/Dev-Config/`), and run:
 
-```
-qmk setup -H ~/Dev-Config/qmk_firmware
+```zsh
+$ qmk setup -H ~/Dev-Config/qmk_firmware
 ```
 
 ## Flashing the Sofle
 
 In order to flash the sofle, disconnect the keyboard from the computer, then detach the TRRS cable between the halves. Then connect one half first, and run:
 
-```
-qmk flash -kb sofle/rev1 -km n1ghtmare
+```zsh
+$ qmk flash -kb sofle/rev1 -km n1ghtmare
 ```
 
 When asked to reset your controller press the reset button next to the OLED screen (bottom right).
@@ -63,7 +63,7 @@ When asked to reset your controller press the reset button next to the OLED scre
 
 In order to flash the sofle choc, disconnect the keyboard from the computer, then detach the TRRS cable between the halves. Then connect the left half first, and double press the button below the OLED screens. This will cause the half to appear as a USB storage device on the system, if you're on Linux do:
 
-```
+```zsh
 $ lsblk -f
 ```
 Find the newly attached device (in this example it's `/dev/sdd1`), then mount it to a folder of your choosing:
@@ -74,13 +74,13 @@ $ sudo mount /dev/sdd1 ~/Mount/soflechoc
 
 Go to the qmk folder (in this case it's `~/Dev-Config/qmk_firmware/`), and switch to the `choc2` branch. You might need to run:
 
-```
+```zsh
 $ qmk clean --all
 ```
 
 Now compile the firmware using the following command:
 
-```
+```zsh
 $ qmk compile -kb sofle_choc -km n1ghtmare -e CONVERT_TO=promicro_rp2040
 ```
 
